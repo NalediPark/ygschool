@@ -104,6 +104,20 @@
                 transition: background 0.3s;
                 cursor: pointer;
             }
+
+            table {
+                /* 테이블 테두리가 이중으로 보이지 않도록 병합합니다. */
+                border-collapse: collapse;
+            }
+
+            /* 테이블 헤더 셀(th)과 일반 셀(td)에 스타일을 적용합니다. */
+            th,
+            td {
+                /* 1픽셀 두께의 실선을 추가합니다. */
+                border: 1px solid #e0e0e0;
+                /* 셀 내용과 테두리 사이의 간격을 설정합니다. */
+                padding: 8px 12px;
+            }
         </style>
     </head>
     <body>
@@ -213,7 +227,13 @@
                         ※ 학교별, 교사별 공개 수업 안내 전체 목록입니다.
                         스크롤하여 확인하세요.
                     </p>
-                    <div style="overflow-x: auto; max-height: 600px">
+                    <div
+                        style="
+                            overflow-x: auto;
+                            max-height: 600px;
+                            margin-top: 1rem;
+                        "
+                    >
                         <table>
                             <thead>
                                 <tr>
@@ -1775,7 +1795,7 @@
                     target="_blank"
                     >신청하기</a
                 >
-                <table>
+                <table style="margin-top: 1rem">
                     <thead>
                         <tr>
                             <th>순</th>
